@@ -7,6 +7,12 @@ class PostsController < ApplicationController
     render :index, locals: { posts: Post.all }
   end
 
+  def show
+    authorize_action
+
+    render :show, locals: { post: post }
+  end
+
   def new
     authorize_action
 
@@ -25,14 +31,11 @@ class PostsController < ApplicationController
     end
   end
 
-  def show
-    authorize_action
-
-    post = Post.find(params[:id])
-    render :show, locals: { post: post }
-  end
-
   private
+
+  def post
+    @post ||= Post.find(params[:id])
+  end
 
   def authorize_action(record = Post)
     authorize(record, "#{action_name}?", policy_class: policy_class)

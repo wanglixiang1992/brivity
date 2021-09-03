@@ -9,11 +9,11 @@ RSpec.describe CommentsController, type: :controller do
   end
 
   let(:current_user) { create(:user) }
-  let(:post1) { create(:post, author: current_user) }
+  let(:new_post) { create(:post, author: current_user) }
   let(:comment_policy) { instance_double(CommentPolicy, create?: true) }
   let(:valid_params) do
     {
-      post_id: post1.id,
+      post_id: new_post.id,
       body: Faker::Lorem.sentence(word_count: 5)
     }
   end
@@ -24,6 +24,6 @@ RSpec.describe CommentsController, type: :controller do
     end
 
     it { is_expected.to respond_with(:found) }
-    it { is_expected.to redirect_to(post_path(post1)) }
+    it { is_expected.to redirect_to(post_path(new_post)) }
   end
 end

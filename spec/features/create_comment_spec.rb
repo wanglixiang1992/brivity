@@ -9,11 +9,11 @@ describe 'Creating Comment', type: :feature do
   end
 
   let(:current_user) { create(:user) }
-  let(:post1) { create(:post, author: current_user) }
+  let(:new_post) { create(:post, author: current_user) }
   let(:comment_body) { 'Comment Body For Post1' }
 
   it 'creates new post' do
-    visit post_path(post1)
+    visit post_path(new_post)
     within('#comment_form') do
       fill_in 'body', with: comment_body
     end

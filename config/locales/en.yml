@@ -47,8 +47,7 @@ en:
     goto_main: Go back to Main Page
   comment:
     add: Add a comment...
+    back: Back
     created: The comment has been created successfully.
     title: "%{count} Comments"
     save: Save
-    written_by: (%{name})
-  

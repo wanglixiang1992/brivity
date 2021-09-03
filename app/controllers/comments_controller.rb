@@ -5,8 +5,11 @@ class CommentsController < ApplicationController
     authorize_action
 
     comment = post.comments.new(comment_params)
-    comment.save!
-    redirect_to post_path(post), notice: I18n.t('comment.created')
+    if comment.save
+      redirect_to post_path(post), notice: I18n.t('comment.created')
+    else
+      redirect_to post_path(post), alert: comment.errors.full_messages[0]
+    end
   end
 
   private
