@@ -46,10 +46,6 @@ Our goal for this project is to see:
 
 We are using Ruby 2.6.3
 
-### Install npm packages:
-
-  npm install
-
 ### Install bundle:
 
   bundle install
@@ -77,5 +73,7 @@ Open [http://127.0.0.1:3000](http://127.0.0.1:3000) to view it in the browser.
 
   bundle exec rspec
 
+### Heroku Application
 
+  http://brivity.herokuapp.com/
 
