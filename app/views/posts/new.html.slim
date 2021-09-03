@@ -1,0 +1,13 @@
+.card
+  .card-body
+    h3= t('post.new')
+    = form_for post, url: posts_path, html: { id: 'post_form' } do |f|
+      - if post.errors.any?
+        .alert.alert-warning
+          ul
+            - post.errors.full_messages.each do |message|
+              li= message
+      = render 'posts/form', reward: post, f: f
+      .col-12.d-flex
+        = f.submit t('comment.save'), class: 'btn btn-primary mr-10'
+        = link_to t('back'), posts_path, class: 'btn btn-default'

@@ -1,0 +1,26 @@
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  .title {
+    font-size: 24px;
+  }
+}
+.card {
+  .card-header {
+    i {
+      float: right;
+      margin-right: 10px;
+    }
+  }
+  .card-body {
+    margin-left: 12px;
+  }
+}
+.comment-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}

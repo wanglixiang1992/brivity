@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title= t('app_title')
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+  body
+    - if user_signed_in?
+      .header
+        .header-title= t('app_title')
+        .header-navbar
+          == t('user.sign_in_success', name: current_user.parsed_fullname)
+          = link_to t('user.edit_profile'), edit_user_registration_path, class: 'nav-item'
+          = link_to t('user.sign_out'), destroy_user_session_path, method: :delete, class: 'nav-item'
+    - if notice
+      p.alert.alert-success= notice
+    - if alert
+      p.alert.alert-danger= alert
+    = yield

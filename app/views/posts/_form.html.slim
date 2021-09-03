@@ -1,0 +1,6 @@
+.form-group
+  = f.label :title, t('post.title')
+  = f.text_field :title, class: 'form-control'
+.form-group
+  = f.label :content, t('post.content')
+  = f.text_area :content, class: 'form-control', placeholder: t('post.add'), rows: 5, value: ''

@@ -1,0 +1,6 @@
+.post-header
+  .title
+    = t('post.all_posts')
+    = " (#{posts.count})"
+  = link_to t('post.new'), new_post_path, class: 'btn btn-primary'
+= render partial: 'posts/list', locals: { posts: posts }

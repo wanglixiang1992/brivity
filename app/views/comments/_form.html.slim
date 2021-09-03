@@ -1,0 +1,6 @@
+= form_tag post_comments_path(post), method: :post
+  .comment-input.input-group.mb-3
+    input#body.form-control name="body" aria-describedby="basic-addon2" aria-label=t('comment.add') placeholder=t('comment.add') type="text"
+    .input-group-append
+      button.btn.btn-outline-secondary.ml-10 type="submit" 
+        = t('comment.save')
